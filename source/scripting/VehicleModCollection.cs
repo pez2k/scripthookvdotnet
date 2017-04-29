@@ -287,9 +287,29 @@ namespace GTA
 
 				return Function.Call<int>(Hash.GET_VEHICLE_LIVERY_COUNT, _owner.Handle);
 			}
-		}
+        }
 
-		public string LocalizedLiveryName
+        public int Livery2
+        {
+            get
+            {
+                return Function.Call<int>(Hash._GET_VEHICLE_LIVERY2, _owner.Handle);
+            }
+            set
+            {
+                Function.Call(Hash._SET_VEHICLE_LIVERY2, _owner.Handle, value);
+            }
+        }
+
+        public int Livery2Count
+        {
+            get
+            {
+                return Function.Call<int>(Hash._GET_VEHICLE_LIVERY2_COUNT, _owner.Handle);
+            }
+        }
+
+        public string LocalizedLiveryName
 		{
 			get
 			{
